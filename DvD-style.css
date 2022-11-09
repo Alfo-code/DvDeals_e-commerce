@@ -1,0 +1,88 @@
+/* Style */
+:root {
+    --button: rgb(120, 191, 14);
+}
+
+body {
+    background: radial-gradient(rgb(215, 80, 80), rgb(72, 72, 226));
+}
+
+h1 {
+    color: aliceblue;
+    text-align: center;
+}
+
+/* navigation */
+
+.nav {
+    background-color: grey;
+    color: white;
+    font-size: 2rem;
+    height: 10vh;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+label {
+    color: white;
+}
+
+/* Layout */
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#movie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: fit-content;
+    gap: 1rem;
+}
+
+/* Cards */
+
+.cards {
+    border: 2px solid blanchedalmond;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.btn {
+    background-color: var(--button);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+footer {
+    background-color: grey;
+    color: white;
+}
+
+
+/* MEDIA */
+
+@media (max-width: 600px) {
+    #movie-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: fit-content;
+        gap: 1rem;
+    }
+}
+@media (max-width: 770px) and (min-width: 601px) {
+    #movie-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: fit-content;
+        gap: 1rem;
+    }
+}
