@@ -1,36 +1,54 @@
 /* Style */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap');
+
 :root {
     --button: rgb(120, 191, 14);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Figtree', sans-serif;
+    margin: 0;
 }
 
 body {
     background: radial-gradient(rgb(215, 80, 80), rgb(72, 72, 226));
 }
 
-h1 {
-    color: aliceblue;
-    text-align: center;
+.store-name {
+    font-style: italic;
 }
 
 /* navigation */
 
 .nav {
-    background-color: grey;
+    background-color: #444;
     color: white;
     font-size: 2rem;
     height: 10vh;
 }
+
 ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
-
+    align-items: center;
 }
 
 label {
     color: white;
 }
 
+.search-wrapper {
+    display: flex;
+    width: 20rem;
+    margin-top: 0.5rem;
+}
+
+#search {
+    width: 100%;
+    height: 40px;
+}
 /* Layout */
 
 main {
@@ -41,30 +59,57 @@ main {
 #movie-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: fit-content;
-    gap: 1rem;
+    width: 70%;
+    gap: 2rem;
 }
 
 /* Cards */
 
 .cards {
-    border: 2px solid blanchedalmond;
-    background-color: antiquewhite;
+    border: 2px solid #444;
+    background-color:  rgb(253, 245, 234);
     border-radius: 10px;
     text-align: center;
+    line-height: 2.5rem;
+}
+
+.cards:hover {
+    background-color: blanchedalmond;
+}
+
+.poster {
+    width: 5rem;
+}
+
+#prices {
+    font-weight: bold;
 }
 
 .btn {
     background-color: var(--button);
+    font-weight: bold;
+    width: 12rem;
+    height: 2rem;
     color: white;
+    border: none;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: green;
 }
 
 
 
+/* Footer */
+
 footer {
-    background-color: grey;
+    background-color: #444;
     color: white;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
 }
 
 
@@ -77,7 +122,11 @@ footer {
         width: fit-content;
         gap: 1rem;
     }
+    .search-wrapper {
+        width: 10rem;
+    }
 }
+
 @media (max-width: 770px) and (min-width: 601px) {
     #movie-grid {
         display: grid;
