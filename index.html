@@ -39,33 +39,68 @@
         </nav>
         <div>
             <label for="sort-by">Sort by</label>
-            <select name="dropdown" id="dropdown">
-                <option value="">All</option>
+            <select name="dropdown" id="dropdown" onchange="sorting(this.value)">
+                <option value="all">See All</option>
                 <option value="oldRel">Old Release</option>
                 <option value="newRel">New Release</option>
-                <option onclick="sortCards()" value="priceLow">Price low</option>
-                <option value="priceUp">Price up</option>
+                <option value="priceDown">Price Down</option>
+                <option value="priceUp">Price Up</option>
             </select>
         </div>
     </header>
     <main>
-        <!-- <aside>
-            <div>
-                <label for="filter-by">Filter by Genre</label>
-                <select name="filter-list" id="filter-list">
-                    <option value="">All</option>
-                    <option value="Action">Action</option>
-                    <option value="Comedy">Comedy</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Sci-Fi">Sci-Fi</option>
-                </select>
+        <aside class="sidebar-wrapper">
+            <div class="sidebar-filter">
+                <h3>Genre</h3>
+                <hr>
+                <div class="filter-list-wrapper">
+                    <ul class="filter-list">
+                        <li>
+                            <label for="">
+                                <input type="checkbox" name="action" id="action">Action
+                            </label>
+                        </li>
+                        <li>
+                            <label for="">
+                                <input type="checkbox" name="comedy" id="comedy">Comedy
+                            </label>
+                        </li>
+                        <li>
+                            <label for="">
+                                <input type="checkbox" name="drama" id="drama">Drama
+                            </label>
+                        </li>
+                        <li>
+                            <label for="">
+                                <input type="checkbox" name="horror" id="horror">Horror
+                            </label>
+                        </li>
+                        <li>
+                            <label for="">
+                                <input type="checkbox" name="mystery" id="mystery">Mystery
+                            </label>
+                        </li>
+                        <li>
+                            <label for="">
+                                <input type="checkbox" name="sci-fi" id="sci-fi">Sci-Fi
+                            </label>
+                        </li>
+                    </ul>
+                    <div>
+                        <button id="apply-btn" onclick="filter()">Apply</button>
+                    </div>
+                </div>
+             
             </div>
-        </aside> -->
+        </aside>
         <div id="movie-grid">
+            <!-- Cards -->
         </div>
     </main>
+    <!-- Footer -->
     <footer>
         <p>Privacy Policy</p>
+        <span> &copy;</span>
     </footer>
  <script src="data.js"></script>
  <script src="index.js"></script> 

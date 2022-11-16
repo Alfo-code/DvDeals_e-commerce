@@ -92,7 +92,7 @@ let data = [
         "year": 1999,
         "price": "£9.50",
         "bluray": false,
-        "stock": 9
+        "stock": 0
     },
     {
         "id": 9,
@@ -105,7 +105,7 @@ let data = [
         "year": 2014,
         "price": "£22.00",
         "bluray": true,
-        "stock": 18
+        "stock": 8
     },
     {
       "id": 10,
@@ -219,3 +219,67 @@ let data = [
       "stock": 9
   }
 ];
+
+function addToCart(){
+  const btn = document.getElementById('btn');
+  const cartCounter = document.getElementById('cart-counter');
+
+  for(let i = 0; i < data.length; i++){
+    if(data[i].stock > 0) {
+      console.log(`${data[i].title} in stock`)
+    } else {
+      console.log(`${data[i].title} not in stock`)
+    }
+  }
+}
+
+// data.forEach((dvd) =>{
+//   if(dvd.stock > 0) {
+//     // console.log(dvd.stock)
+//     const cartCounter = document.getElementById('cart-counter');
+//     cartCounter.innerText= 1;
+//   } 
+// })
+
+// let inStock = data.filter(obj => obj.stock > 0);
+
+// console.log(inStock);
+
+
+const boxes = document.querySelectorAll('input[type="checkbox"]');
+  console.log(boxes[0].id);
+
+function handleCheck(event) {
+    console.log(event.target.id.includes("horror"))
+    
+};
+  
+boxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+
+// ************************************************************************
+
+function filter() {
+  const cardContainer = document.getElementById('movie-grid');
+  const movie = cardContainer.getElementsByClassName('cards');
+
+  const boxes = document.querySelectorAll('input[type="checkbox"]');
+
+  for (let i = 0; i < boxes.length; i++) {
+    let checkboxes = boxes[i];
+    
+    
+    for(let i = 0; i < movie.length; i++){
+      let genre = movie[i].querySelector('.genre');
+      // console.log(checkboxes.id);
+      if(genre.innerText.toLowerCase() == [checkboxes.id]) {
+        movie[i].style.display = "";
+      } else {
+        movie[i].style.display = "none";
+      }
+    }
+  };
+
+
+
+};
+ 
