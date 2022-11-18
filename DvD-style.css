@@ -97,15 +97,20 @@ hr {
     color: #444;
 }
 
-#apply-btn{
-    background-color: var(--button);
+#clear-btn{
+    background-color: white;
     font-weight: bold;
     width: 6rem;
     height: 2rem;
-    color: white;
+    color: var(--button);
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+#clear-btn:hover {
+    background-color: green;
+    color: white;
 }
 
 /* Cards */
@@ -124,6 +129,10 @@ hr {
 
 .poster {
     width: 5rem;
+}
+
+.genre {
+    font-style: italic;
 }
 
 #prices {

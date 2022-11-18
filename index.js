@@ -151,7 +151,35 @@ function searchDvd(){
   }
 };
 
+// Filter by genre
 
+const boxes = document.querySelectorAll('input[type="checkbox"]');
+const cardContainer = document.getElementById('movie-grid');
+const movie = cardContainer.getElementsByClassName('cards');
+
+for (let i = 0; i < boxes.length; i++) {
+  boxes[i].addEventListener("click", (e) => {
+    const filter = e.target.id;
+    console.log(filter)
+
+    for(let i = 0; i < movie.length; i++){
+      let genre = movie[i].querySelector('.genre');
+    
+      if(genre.innerText.toLowerCase().includes(filter)) {
+          movie[i].style.display = "";
+          } else {
+          movie[i].style.display = "none";
+        }
+     }
+  })
+};
+
+// Clear button
+
+const btnClear = document.getElementsByTagName("input");
+for (let i = 0; i < btnClear.length; ++i) { 
+  btnClear[i].checked = false; 
+}
 
 // Add to Cart
 
