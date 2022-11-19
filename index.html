@@ -32,24 +32,25 @@
                         <span id="cart-counter">0</span>
                     </button>
                     <div class="cart-container" id="cart-container">
-
+                        <!-- Cards -->
                     </div>
                 </li>
             </ul>
         </nav>
-        <div>
-            <label for="sort-by">Sort by</label>
-            <select name="dropdown" id="dropdown" onchange="sorting(this.value)">
-                <option value="all">See All</option>
-                <option value="oldRel">Old Release</option>
-                <option value="newRel">New Release</option>
-                <option value="priceDown">Price Down</option>
-                <option value="priceUp">Price Up</option>
-            </select>
-        </div>
+        
     </header>
     <main>
         <aside class="sidebar-wrapper">
+            <div class="sort-wrapper">
+                <label for="sort-by">Sort by</label>
+                <select name="dropdown" id="dropdown" onchange="sorting(this.value)">
+                    <option value="all">See All</option>
+                    <option value="oldRel">Old Release</option>
+                    <option value="newRel">New Release</option>
+                    <option value="priceDown">Price Down</option>
+                    <option value="priceUp">Price Up</option>
+                </select>
+            </div>
             <div class="sidebar-filter">
                 <h3>Genre</h3>
                 <hr>
