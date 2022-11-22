@@ -2,6 +2,7 @@ let data = [
     {
         "id": 1,
         "title": "Deadpool",
+        "image":"https://mir-s3-cdn-cf.behance.net/project_modules/fs/02cc1333658190.56b2c8ea3720a.png",
         "genre": [
           "Action",
           "Comedy"

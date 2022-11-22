@@ -78,10 +78,7 @@ main {
 }
 
 .sidebar-wrapper {
-    /* position: absolute; */
-    /* left: 0; */
     padding-right: 1rem;
-    
 }
 
 .sidebar-filter {
@@ -170,7 +167,19 @@ hr {
 
 /* Pagination */
 
+.pagination {
+    text-align: center;
+    padding: 1rem;
+}
 
+.pagination-button {
+    background-color: white;
+    color: #444;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0.2rem;
+    padding: 0.5rem;
+}
 /* Footer */
 
 footer {

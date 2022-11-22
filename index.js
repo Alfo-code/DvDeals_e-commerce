@@ -221,3 +221,43 @@ for (let i = 0; i < btnClear.length; ++i) {
 // )();
 
 // Pagination
+
+let page1 = data.slice(0, 12);
+
+let pages = "";
+page1.forEach((movies) =>{
+    pages += 
+    `<div class="cards" id="cards">
+        <h2 class="title">${movies.title}</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
+        <p class="genre">${movies.genre}</p>
+        <p>Year: ${movies.year}</p>
+        <p id="prices">${movies.price}</p>
+        <p class="stock">In Stock: ${movies.stock}</p>
+        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+    </div>`
+});
+
+function firstPage() {
+  document.getElementById('movie-grid').innerHTML = pages;
+};
+
+let page2 = data.slice(12, 24);
+
+let nextPage = "";
+page2.forEach((movies) =>{
+    nextPage += 
+    `<div class="cards" id="cards">
+        <h2 class="title">${movies.title}</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
+        <p class="genre">${movies.genre}</p>
+        <p>Year: ${movies.year}</p>
+        <p id="prices">${movies.price}</p>
+        <p class="stock">In Stock: ${movies.stock}</p>
+        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+    </div>`
+});
+
+function secondPage() {
+  document.getElementById('movie-grid').innerHTML = nextPage;
+};
