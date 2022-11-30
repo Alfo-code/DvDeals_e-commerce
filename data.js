@@ -296,18 +296,28 @@ let data = [
 ];
 // *********************************************************
 
-function addToCart(){
-  const btn = document.getElementById('btn');
-  const cartCounter = document.getElementById('cart-counter');
+// function cartCounter(){
+//   const btn = document.getElementsByClassName('btn');
+//   const cartCounter = document.getElementById('cart-counter');
+//   let cartContent = document.getElementsByClassName('cart-content')[0];
 
-  for(let i = 0; i < data.length; i++){
-    if(data[i].stock > 0) {
-      console.log(`${data[i].title} in stock`)
-    } else {
-      console.log(`${data[i].title} not in stock`)
-    }
-  }
-}
+//   for (let i = 0; i < cartContent.length; i++) {
+//     const cartElement = cartContent[i];
+    
+//   }
+
+//   console.log(cartContent.length)
+
+  // for(let i = 0; i < data.length; i++){
+  //   if(data[i].stock > 0) {
+  //     console.log(`${data[i].title} in stock`)
+  //   } else {
+  //     console.log(`${data[i].title} not in stock`)
+  //   }
+  // }
+// }
+
+// cartCounter()
 
 // data.forEach((dvd) =>{
 //   if(dvd.stock > 0) {
@@ -320,3 +330,16 @@ function addToCart(){
 // let inStock = data.filter(obj => obj.stock > 0);
 
 // console.log(inStock);
+
+
+// const addButton = document.getElementsByClassName('btn');
+// for (let i = 0; i < addButton.length; i++) {
+//   const buttons = addButton[i]
+//   buttons.addEventListener('click', cartCounter)
+// }
+
+function cartCounter() {
+  const cartCounter = document.getElementById('cart-counter');
+  let updateCounter = Number(cartCounter.innerText) + 1;
+  cartCounter.innerText = updateCounter;
+}

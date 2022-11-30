@@ -1,4 +1,5 @@
 // Cards
+
 let dvd = "";
 data.forEach((movies) =>{
     dvd += 
@@ -7,15 +8,14 @@ data.forEach((movies) =>{
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
-        <p id="prices">${movies.price}</p>
+        <p class="price">${movies.price}</p>
         <p class="stock">In Stock: ${movies.stock}</p>
-        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+        <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 })
 document.getElementById('movie-grid').innerHTML = dvd;
 
 // =========================================================
-
 // Sort by date oldestFirst
 
 let oldest = data.slice(0);
@@ -32,9 +32,9 @@ oldest.forEach((movies) =>{
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
-        <p id="prices">${movies.price}</p>
+        <p class="price">${movies.price}</p>
         <p class="stock">In Stock: ${movies.stock}</p>
-        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+        <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 })
 
@@ -54,9 +54,9 @@ newest.forEach((movies) =>{
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
-        <p id="prices">${movies.price}</p>
+        <p class="price">${movies.price}</p>
         <p class="stock">In Stock: ${movies.stock}</p>
-        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+        <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
 
@@ -70,7 +70,6 @@ cheapFirst.sort(function(a,b) {
     return a - b;
 });
 
-
 let cheapFilter = "";
 cheapFirst.forEach((movies) =>{
     cheapFilter += 
@@ -79,12 +78,11 @@ cheapFirst.forEach((movies) =>{
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
-        <p id="prices">${movies.price}</p>
+        <p class="price">${movies.price}</p>
         <p class="stock">In Stock: ${movies.stock}</p>
-        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+        <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
-
 
 // Sort by price Expensive first
 
@@ -96,7 +94,6 @@ expFirst.sort(function(a,b) {
     return b - a;
 });
 
-
 let expFilter = "";
 expFirst.forEach((movies) =>{
     expFilter += 
@@ -105,12 +102,11 @@ expFirst.forEach((movies) =>{
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
-        <p id="prices">${movies.price}</p>
+        <p class="price">${movies.price}</p>
         <p class="stock">In Stock: ${movies.stock}</p>
-        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+        <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
-
 
 // Sorting function
 
@@ -181,44 +177,136 @@ for (let i = 0; i < btnClear.length; ++i) {
   btnClear[i].checked = false; 
 }
 
-// Add to Cart
+// Loading
 
-// const addItem = document.getElementById('btn');
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready)
+} else {
+  ready()
+}
 
-// addItem.addEventListener('click', ()=>{
-//   console.log(addItem);
-//   document.getElementById('cart-counter').innerText = +1;
-// })
+function ready() {
+  const removeItem = document.getElementsByClassName('product-remove');
+  for (let i = 0; i < removeItem.length; i++) {
+    const bin = removeItem[i];
+    bin.addEventListener("click", removeCartItem)
+  } 
 
-// ///
+  let quantityInput = document.getElementsByClassName('product-quantity');
+  for (let i = 0; i < quantityInput.length; i++) {
+    const input = quantityInput[i];
+    input.addEventListener('change', quantityChanged)
+  }
 
-// function addToCart(){
-//   const btn = document.getElementById('btn');
-//   const cartCounter = document.getElementById('cart-counter');
+  const addBtn = document.getElementsByClassName('btn');
+  for (let i = 0; i < addBtn.length; i++) {
+    const button = addBtn[i]
+    button.addEventListener('click', addToCart)
+  }
 
-//   data.forEach((dvd) =>{
-//     if(dvd.stock > 0) {
-//       console.log(dvd.stock)
-//       // const cartCounter = document.getElementById('cart-counter');
-//       cartCounter.innerText=  1;
-//     } else{
-//       cartCounter.innerText = 0;
-//     }
-//   })
+  document.getElementsByClassName('btn-buy')[0].addEventListener('click', purchased)
+}
+
+// Purchase
+
+function purchased() {
+  alert('Thank you for your purchase')
+  let cartItems = document.getElementsByClassName('cart-content')[0]
+  while (cartItems.hasChildNodes()) {
+    cartItems.removeChild(cartItems.firstChild)
+  }
+  updateCartTotal()
+}
+
+// Remove item from Cart
+
+function removeCartItem(event) {
+  let removedItem = event.target;
+  removedItem.parentElement.remove();
+  updateCartTotal()
+}
+
+// Cart
+
+const cartIcon = document.getElementById('cart-icon');
+const cart = document.getElementById('cart-container');
+const closeCart = document.getElementById('cart-close');
+
+cartIcon.addEventListener("click", () => {
+  cart.classList.add("active");
+});
+
+closeCart.addEventListener("click", () => {
+  cart.classList.remove("active");
+});
+
+// Add to cart
+
+function addToCart(event) {
+  let button = event.target;
+  let shopItem = button.parentElement;
+  let title = shopItem.getElementsByClassName('title')[0].innerText;
+  let price = shopItem.getElementsByClassName('price')[0].innerText;
+  let imageSrc = shopItem.getElementsByClassName('poster')[0].src;
+  addItemToCart(title, price, imageSrc);
+  updateCartTotal()
+}
+
+function addItemToCart(title, price, imageSrc) {
+  let cartRow = document.createElement('div');
+  let cartItem = document.getElementsByClassName('cart-content')[0];
+  let cartItemTitle = cartItem.getElementsByClassName('cart-product-title');
+  for (let i = 0; i < cartItemTitle.length; i++) {
+    if (cartItemTitle[i].innerText == title) {
+      alert('This item is already added to the cart')
+      return
+    } ;
+  }
+  let cartContent = `
+    <div class="cart-item">
+      <img src="${imageSrc}" alt="dvd" class="poster">
+      <div class="detail-box">
+          <div class="cart-product-title">${title}</div>
+          <div class="cart-product-price">${price}</div>
+          <input type="number" value="1" class="product-quantity">
+      </div>
+      <span class="material-symbols-outlined product-remove">
+          delete
+      </span>
+    </div> `;
  
-// };
+  cartRow.innerHTML = cartContent;
+  cartItem.append(cartRow)
+  cartRow.getElementsByClassName('product-remove')[0].addEventListener('click', removeCartItem)
+  cartRow.getElementsByClassName('product-quantity')[0].addEventListener('change', quantityChanged)
+}
+
+// Quantity
+
+function quantityChanged(event) {
+  let input = event.target
+  if (isNaN(input.value) || input.value <=0) {
+    input.value = 1
+  }
+  updateCartTotal()
+}
 
 
-// (function(){
+function updateCartTotal() {
+  const cartContent = document.getElementsByClassName('cart-content')[0];
+  const cartItems = cartContent.getElementsByClassName('cart-item');
+  let total = 0;
+  for (let i = 0; i < cartItems.length; i++) {
+    const cartItem = cartItems[i];
+    const priceElement = cartItem.getElementsByClassName('cart-product-price')[0];
+    const quantity = cartItem.getElementsByClassName('product-quantity')[0].value;
+    const price = parseFloat(priceElement.innerText.replace('£', ''));
+    total += (price * quantity);
+  }
+  total = total.toFixed(2);
+  document.getElementsByClassName('total-price')[0].innerText = '£' + total;
+}
 
-//     const cart = document.getElementById('cart');
-//     const cartContainer = document.getElementById('cart');
-  
-//     cart.addEventListener('click', function(){
-//       cartContainer.classList.toggle('show-cart')
-//     })
-//   }
-// )();
 
 // Pagination
 
@@ -232,9 +320,9 @@ page1.forEach((movies) =>{
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
-        <p id="prices">${movies.price}</p>
+        <p class="price">${movies.price}</p>
         <p class="stock">In Stock: ${movies.stock}</p>
-        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+        <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
 
@@ -252,9 +340,9 @@ page2.forEach((movies) =>{
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
-        <p id="prices">${movies.price}</p>
+        <p class="price">${movies.price}</p>
         <p class="stock">In Stock: ${movies.stock}</p>
-        <button onClick="addToCart()" class="btn" id="btn" type="submit">Add to Basket</button>
+        <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
 
