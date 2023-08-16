@@ -7,8 +7,6 @@ Here are some of the things I learned from this project:
  - How to troubleshoot problems and debug code
  - How to work effectively under pressure
  - How to present my work to a group of people
-   
-I'm confident that the skills I learned from the bootcamp will help me succeed as a web developer.
 
 ## Built with
 
