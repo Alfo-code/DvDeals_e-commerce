@@ -8,9 +8,7 @@ let data = [
           "Comedy"
         ],
         "year": 2016,
-        "price": "£15.50",
-        "bluray": true,
-        "stock": 2
+        "price": "£15.50"
       },
       {
         "id": 2,
@@ -20,9 +18,7 @@ let data = [
           "Mystery"
         ],
         "year": 1996,
-        "price": "£9.65",
-        "bluray": false,
-        "stock": 5
+        "price": "£9.65"
       },
       {
         "id": 3,
@@ -32,10 +28,8 @@ let data = [
           "Mystery"
         ],
         "year": 2001,
-        "price": "£6.99",
-        "bluray": false,
-        "stock": 1
-      },
+        "price": "£6.99"
+        },
       {
         "id": 4,
         "title": "Eat",
@@ -44,9 +38,7 @@ let data = [
           "Horror"
         ],
         "year": 2000,
-        "price": "£12.09",
-        "bluray": true,
-        "stock": 11
+        "price": "£12.09"
       },
       {
         "id": 5,
@@ -56,9 +48,7 @@ let data = [
           "Mystery"
         ],
         "year": 2010,
-        "price": "£9.65",
-        "bluray": false,
-        "stock": 11
+        "price": "£9.65"
       },
       {
         "id": 6,
@@ -69,9 +59,7 @@ let data = [
           "Romance"
         ],
         "year": 1995,
-        "price": "£2.22",
-        "bluray": false,
-        "stock": 13
+        "price": "£2.22"
       },
       {
         "id": 7,
@@ -81,9 +69,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 2010,
-        "price": "£15.99",
-        "bluray": true,
-        "stock": 4
+        "price": "£15.99"
       },
       {
         "id": 8,
@@ -93,9 +79,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 1999,
-        "price": "£9.50",
-        "bluray": false,
-        "stock": 0
+        "price": "£9.50"
       },
       {
         "id": 9,
@@ -106,9 +90,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 2014,
-        "price": "£22.00",
-        "bluray": true,
-        "stock": 8
+        "price": "£22.00"
       },
       {
         "id": 10,
@@ -117,9 +99,7 @@ let data = [
           "Horror"
         ],
         "year": 1979,
-        "price": "£8.99",
-        "bluray": false,
-        "stock": 6
+        "price": "£8.99"
       },
       {
         "id": 11,
@@ -130,9 +110,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 1985,
-        "price": "£9.99",
-        "bluray": false,
-        "stock": 15
+        "price": "£9.99"
       },
       {
         "id": 12,
@@ -143,9 +121,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 2006,
-        "price": "£13.90",
-        "bluray": true,
-        "stock": 13
+        "price": "£13.90"
       },
       {
         "id": 13,
@@ -155,9 +131,7 @@ let data = [
           "Drama"
         ],
         "year": 2019,
-        "price": "£20.09",
-        "bluray": true,
-        "stock": 1
+        "price": "£20.09"
       },
       {
         "id": 14,
@@ -167,9 +141,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 2018,
-        "price": "£19.99",
-        "bluray": true,
-        "stock": 0
+        "price": "£19.99"
       },
       {
         "id": 15,
@@ -180,9 +152,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 2005,
-        "price": "£21.02",
-        "bluray": false,
-        "stock": 5
+        "price": "£21.02"
       },
       {
         "id": 16,
@@ -193,9 +163,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 1993,
-        "price": "£10.00",
-        "bluray": false,
-        "stock": 4
+        "price": "£10.00"
       },
       {
         "id": 17,
@@ -205,9 +173,7 @@ let data = [
           "Mystery"
         ],
         "year": 1982,
-        "price": "£8.65",
-        "bluray": false,
-        "stock": 2
+        "price": "£8.65"
       },
       {
         "id": 18,
@@ -218,9 +184,7 @@ let data = [
           "Sci-Fi"
         ],
         "year": 2017,
-        "price": "£13.20",
-        "bluray": true,
-        "stock": 9
+        "price": "£13.20"
       },
       {
         "id": 19,
@@ -230,9 +194,7 @@ let data = [
           "Mystery",
         ],
         "year": 1996,
-        "price": "£9.20",
-        "bluray": false,
-        "stock": 8
+        "price": "£9.20"
       },
       {
         "id": 20,
@@ -241,9 +203,7 @@ let data = [
           "Comedy"
         ],
         "year": 1988,
-        "price": "£13.70",
-        "bluray": false,
-        "stock": 13
+        "price": "£13.70"
       },
       {
         "id": 21,
@@ -253,9 +213,7 @@ let data = [
           "Comedy"
         ],
         "year": 1998,
-        "price": "£8.50",
-        "bluray": true,
-        "stock": 5
+        "price": "£8.50"
       },
       {
         "id": 22,
@@ -265,9 +223,7 @@ let data = [
           "Mystery"
         ],
         "year": 2007,
-        "price": "£11.10",
-        "bluray": true,
-        "stock": 4
+        "price": "£11.10"
       },
       {
         "id": 23,
@@ -277,9 +233,7 @@ let data = [
           "Mystery"
         ],
         "year": 2019,
-        "price": "£16.60",
-        "bluray": true,
-        "stock": 6
+        "price": "£16.60"
       },
       {
         "id": 24,
@@ -289,57 +243,6 @@ let data = [
           "Horror"
         ],
         "year": 2000,
-        "price": "£5.90",
-        "bluray": true,
-        "stock": 5
+        "price": "£5.90"
       }
 ];
-// *********************************************************
-
-// function cartCounter(){
-//   const btn = document.getElementsByClassName('btn');
-//   const cartCounter = document.getElementById('cart-counter');
-//   let cartContent = document.getElementsByClassName('cart-content')[0];
-
-//   for (let i = 0; i < cartContent.length; i++) {
-//     const cartElement = cartContent[i];
-    
-//   }
-
-//   console.log(cartContent.length)
-
-  // for(let i = 0; i < data.length; i++){
-  //   if(data[i].stock > 0) {
-  //     console.log(`${data[i].title} in stock`)
-  //   } else {
-  //     console.log(`${data[i].title} not in stock`)
-  //   }
-  // }
-// }
-
-// cartCounter()
-
-// data.forEach((dvd) =>{
-//   if(dvd.stock > 0) {
-//     // console.log(dvd.stock)
-//     const cartCounter = document.getElementById('cart-counter');
-//     cartCounter.innerText= 1;
-//   } 
-// })
-
-// let inStock = data.filter(obj => obj.stock > 0);
-
-// console.log(inStock);
-
-
-// const addButton = document.getElementsByClassName('btn');
-// for (let i = 0; i < addButton.length; i++) {
-//   const buttons = addButton[i]
-//   buttons.addEventListener('click', cartCounter)
-// }
-
-function cartCounter() {
-  const cartCounter = document.getElementById('cart-counter');
-  let updateCounter = Number(cartCounter.innerText) + 1;
-  cartCounter.innerText = updateCounter;
-}

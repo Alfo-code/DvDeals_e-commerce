@@ -3,6 +3,8 @@
 
 :root {
     --button: rgb(120, 191, 14);
+    --main-white: #fff;
+    --main-black: #444;
 }
 
 * {
@@ -27,8 +29,8 @@ header {
 }
 
 .nav {
-    background-color: #444;
-    color: white;
+    background-color: var(--main-black);
+    color: var(--main-white);
     font-size: 2rem;
     height: 3.6rem;
 }
@@ -41,7 +43,7 @@ ul {
 }
 
 label {
-    color: white;
+    color: var(--main-white);
 }
 
 .search-wrapper {
@@ -56,6 +58,7 @@ label {
 }
 
 /* Cart */
+
 #cart-icon {
     transition: 1s;
 }
@@ -63,8 +66,8 @@ label {
 .cart-container {
     position: fixed;
     right: 1rem;
-    background-color: white;
-    color: #444;
+    background-color: var(--main-white);
+    color: var(--main-black);
     font-size: 1rem;
     padding: 1rem;
     transition: .5s;
@@ -179,7 +182,7 @@ main {
 hr {
     height: 2px;
     margin-top: 1rem;
-    background-color: #444;
+    background-color: var(--main-black);
 }
 
 .filter-list {
@@ -191,11 +194,11 @@ hr {
 }
 
 .filter-list li label {
-    color: #444;
+    color: var(--main-black);
 }
 
 #clear-btn{
-    background-color: white;
+    background-color: var(--main-white);
     font-weight: bold;
     width: 6rem;
     height: 2rem;
@@ -227,6 +230,7 @@ hr {
 
 .poster {
     width: 5rem;
+    margin-top: 1rem;
 }
 
 .genre {
@@ -242,7 +246,7 @@ hr {
     font-weight: bold;
     width: 12rem;
     height: 2rem;
-    color: white;
+    color: var(--main-white);
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -260,8 +264,8 @@ hr {
 }
 
 .pagination-button {
-    background-color: white;
-    color: #444;
+    background-color: var(--main-white);
+    color: var(--main-black);
     font-weight: bold;
     border-radius: 5px;
     margin: 0.2rem;
@@ -270,8 +274,8 @@ hr {
 /* Footer */
 
 footer {
-    background-color: #444;
-    color: white;
+    background-color: var(--main-black);
+    color: var(--main-white);
     width: 100%;
     margin-top: 1rem;
     padding: 1rem;

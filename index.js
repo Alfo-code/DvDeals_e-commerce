@@ -6,16 +6,14 @@ data.forEach((movies) =>{
     `<div class="cards" id="cards">
         <h2 class="title">${movies.title}</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre}</p>
+        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
         <p>Year: ${movies.year}</p>
         <p class="price">${movies.price}</p>
-        <p class="stock">In Stock: ${movies.stock}</p>
         <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 })
 document.getElementById('movie-grid').innerHTML = dvd;
 
-// =========================================================
 // Sort by date oldestFirst
 
 let oldest = data.slice(0);
@@ -30,10 +28,9 @@ oldest.forEach((movies) =>{
     `<div class="cards" id="cards">
         <h2 class="title">${movies.title}</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre}</p>
+        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
         <p>Year: ${movies.year}</p>
         <p class="price">${movies.price}</p>
-        <p class="stock">In Stock: ${movies.stock}</p>
         <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 })
@@ -52,10 +49,9 @@ newest.forEach((movies) =>{
     `<div class="cards" id="cards">
         <h2 class="title">${movies.title}</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre}</p>
+        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
         <p>Year: ${movies.year}</p>
         <p class="price">${movies.price}</p>
-        <p class="stock">In Stock: ${movies.stock}</p>
         <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
@@ -76,10 +72,9 @@ cheapFirst.forEach((movies) =>{
     `<div class="cards" id="cards">
         <h2 class="title">${movies.title}</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre}</p>
+        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
         <p>Year: ${movies.year}</p>
         <p class="price">${movies.price}</p>
-        <p class="stock">In Stock: ${movies.stock}</p>
         <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
@@ -100,10 +95,9 @@ expFirst.forEach((movies) =>{
     `<div class="cards" id="cards">
         <h2 class="title">${movies.title}</h2>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre}</p>
+        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
         <p>Year: ${movies.year}</p>
         <p class="price">${movies.price}</p>
-        <p class="stock">In Stock: ${movies.stock}</p>
         <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
@@ -203,8 +197,6 @@ function ready() {
     const button = addBtn[i]
     button.addEventListener('click', addToCart)
   }
-
-  document.getElementsByClassName('btn-buy')[0].addEventListener('click', purchased)
 }
 
 // Purchase
@@ -216,6 +208,8 @@ function purchased() {
     cartItems.removeChild(cartItems.firstChild)
   }
   updateCartTotal()
+  const cartCounter = document.getElementById('cart-counter');
+  cartCounter.innerText = 0;
 }
 
 // Remove item from Cart
@@ -279,6 +273,16 @@ function addItemToCart(title, price, imageSrc) {
   cartItem.append(cartRow)
   cartRow.getElementsByClassName('product-remove')[0].addEventListener('click', removeCartItem)
   cartRow.getElementsByClassName('product-quantity')[0].addEventListener('change', quantityChanged)
+
+  if (cartContent) {
+    document.getElementsByClassName('btn-buy')[0].addEventListener('click', purchased)
+  }
+}
+
+function cartCounter() {
+  const cartCounter = document.getElementById('cart-counter');
+  let updateCounter = Number(cartCounter.innerText) + 1;
+  cartCounter.innerText = updateCounter;
 }
 
 // Quantity
@@ -290,7 +294,6 @@ function quantityChanged(event) {
   }
   updateCartTotal()
 }
-
 
 function updateCartTotal() {
   const cartContent = document.getElementsByClassName('cart-content')[0];
@@ -307,7 +310,6 @@ function updateCartTotal() {
   document.getElementsByClassName('total-price')[0].innerText = '£' + total;
 }
 
-
 // Pagination
 
 let page1 = data.slice(0, 12);
@@ -321,7 +323,6 @@ page1.forEach((movies) =>{
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
         <p class="price">${movies.price}</p>
-        <p class="stock">In Stock: ${movies.stock}</p>
         <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
@@ -341,7 +342,6 @@ page2.forEach((movies) =>{
         <p class="genre">${movies.genre}</p>
         <p>Year: ${movies.year}</p>
         <p class="price">${movies.price}</p>
-        <p class="stock">In Stock: ${movies.stock}</p>
         <button class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
