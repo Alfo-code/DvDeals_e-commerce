@@ -4,12 +4,12 @@ let dvd = "";
 data.forEach((movies) =>{
     dvd += 
     `<div class="cards" id="cards">
-        <h2 class="title">${movies.title}</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
-        <p>Year: ${movies.year}</p>
-        <p class="price">${movies.price}</p>
-        <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
+      <img src="dvdeals-cover.png" alt="dvd" class="poster">
+      <h2 class="dvd-title">${movies.title}</h2>
+      <p class="price">${movies.price}</p>
+      <p class="card-details genre">${movies.genre.toString().split(',').join(' • ')}</p>
+      <p class="card-details">Year: ${movies.year}</p>
+      <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 })
 document.getElementById('movie-grid').innerHTML = dvd;
@@ -26,12 +26,12 @@ let sorted = "";
 oldest.forEach((movies) =>{
     sorted += 
     `<div class="cards" id="cards">
-        <h2 class="title">${movies.title}</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
-        <p>Year: ${movies.year}</p>
-        <p class="price">${movies.price}</p>
-        <button class="btn" id="btn" type="submit">Add to Basket</button>
+      <img src="dvdeals-cover.png" alt="dvd" class="poster">
+      <h2 class="dvd-title">${movies.title}</h2>
+      <p class="price">${movies.price}</p>
+      <p class="card-details genre">${movies.genre.toString().split(',').join(' • ')}</p>
+      <p class="card-details">Year: ${movies.year}</p>
+      <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 })
 
@@ -47,12 +47,12 @@ let newestSort = "";
 newest.forEach((movies) =>{
     newestSort += 
     `<div class="cards" id="cards">
-        <h2 class="title">${movies.title}</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
-        <p>Year: ${movies.year}</p>
-        <p class="price">${movies.price}</p>
-        <button class="btn" id="btn" type="submit">Add to Basket</button>
+      <img src="dvdeals-cover.png" alt="dvd" class="poster">
+      <h2 class="dvd-title">${movies.title}</h2>
+      <p class="price">${movies.price}</p>
+      <p class="card-details genre">${movies.genre.toString().split(',').join(' • ')}</p>
+      <p class="card-details">Year: ${movies.year}</p>
+      <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
 
@@ -70,12 +70,12 @@ let cheapFilter = "";
 cheapFirst.forEach((movies) =>{
     cheapFilter += 
     `<div class="cards" id="cards">
-        <h2 class="title">${movies.title}</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
-        <p>Year: ${movies.year}</p>
-        <p class="price">${movies.price}</p>
-        <button class="btn" id="btn" type="submit">Add to Basket</button>
+      <img src="dvdeals-cover.png" alt="dvd" class="poster">
+      <h2 class="dvd-title">${movies.title}</h2>
+      <p class="price">${movies.price}</p>
+      <p class="card-details genre">${movies.genre.toString().split(',').join(' • ')}</p>
+      <p class="card-details">Year: ${movies.year}</p>
+      <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
 
@@ -93,12 +93,12 @@ let expFilter = "";
 expFirst.forEach((movies) =>{
     expFilter += 
     `<div class="cards" id="cards">
-        <h2 class="title">${movies.title}</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre.toString().split(',').join(' • ')}</p>
-        <p>Year: ${movies.year}</p>
-        <p class="price">${movies.price}</p>
-        <button class="btn" id="btn" type="submit">Add to Basket</button>
+      <img src="dvdeals-cover.png" alt="dvd" class="poster">
+      <h2 class="dvd-title">${movies.title}</h2>
+      <p class="price">${movies.price}</p>
+      <p class="card-details genre">${movies.genre.toString().split(',').join(' • ')}</p>
+      <p class="card-details">Year: ${movies.year}</p>
+      <button onClick= cartCounter() class="btn" id="btn" type="submit">Add to Basket</button>
     </div>`
 });
 
@@ -131,7 +131,7 @@ function searchDvd(){
   const movie = cardContainer.getElementsByClassName('cards');
 
   for(let i = 0; i < movie.length; i++) {
-    let title = movie[i].querySelector('.title');
+    let title = movie[i].querySelector('.dvd-title');
 
     if(title.innerText.toUpperCase().indexOf(input) > -1) {
       movie[i].style.display = "";
@@ -169,7 +169,7 @@ for (let i = 0; i < boxes.length; i++) {
 const btnClear = document.getElementsByTagName("input");
 for (let i = 0; i < btnClear.length; ++i) { 
   btnClear[i].checked = false; 
-}
+};
 
 // Loading
 
@@ -177,7 +177,7 @@ if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else {
   ready()
-}
+};
 
 function ready() {
   const removeItem = document.getElementsByClassName('product-remove');
@@ -197,7 +197,24 @@ function ready() {
     const button = addBtn[i]
     button.addEventListener('click', addToCart)
   }
-}
+};
+
+// Check if cart is empty
+
+const cartItem = document.getElementsByClassName('cart-item');
+
+function checkCart() {
+  const btnBuy = document.getElementsByClassName("btn-buy")[0]
+  let isEmpty = document.getElementsByClassName('empty-cart')[0]
+  if (cartItem.length === 0) {
+    btnBuy.setAttribute("disabled", "disabled");
+    isEmpty.style.display = 'block';
+  } else {
+    btnBuy.removeAttribute("disabled");
+    isEmpty.style.display = 'none';
+  }
+};
+checkCart()
 
 // Purchase
 
@@ -208,9 +225,9 @@ function purchased() {
     cartItems.removeChild(cartItems.firstChild)
   }
   updateCartTotal()
-  const cartCounter = document.getElementById('cart-counter');
-  cartCounter.innerText = 0;
-}
+  cartCounter()
+  checkCart()
+};
 
 // Remove item from Cart
 
@@ -218,7 +235,9 @@ function removeCartItem(event) {
   let removedItem = event.target;
   removedItem.parentElement.remove();
   updateCartTotal()
-}
+  checkCart()
+  cartCounter()
+};
 
 // Cart
 
@@ -239,12 +258,13 @@ closeCart.addEventListener("click", () => {
 function addToCart(event) {
   let button = event.target;
   let shopItem = button.parentElement;
-  let title = shopItem.getElementsByClassName('title')[0].innerText;
+  let title = shopItem.getElementsByClassName('dvd-title')[0].innerText;
   let price = shopItem.getElementsByClassName('price')[0].innerText;
   let imageSrc = shopItem.getElementsByClassName('poster')[0].src;
   addItemToCart(title, price, imageSrc);
   updateCartTotal()
-}
+  checkCart()
+};
 
 function addItemToCart(title, price, imageSrc) {
   let cartRow = document.createElement('div');
@@ -254,15 +274,15 @@ function addItemToCart(title, price, imageSrc) {
     if (cartItemTitle[i].innerText == title) {
       alert('This item is already added to the cart')
       return
-    } ;
+    };
   }
   let cartContent = `
     <div class="cart-item">
-      <img src="${imageSrc}" alt="dvd" class="poster">
+      <img src="${imageSrc}" alt="dvd" class="cart-poster">
       <div class="detail-box">
           <div class="cart-product-title">${title}</div>
           <div class="cart-product-price">${price}</div>
-          <input type="number" value="1" class="product-quantity">
+          <input type="number" value="1" max="9" class="product-quantity">
       </div>
       <span class="material-symbols-outlined product-remove">
           delete
@@ -275,15 +295,15 @@ function addItemToCart(title, price, imageSrc) {
   cartRow.getElementsByClassName('product-quantity')[0].addEventListener('change', quantityChanged)
 
   if (cartContent) {
-    document.getElementsByClassName('btn-buy')[0].addEventListener('click', purchased)
+    document.getElementsByClassName('btn-buy')[0].addEventListener('click', purchased);
   }
-}
+};
 
 function cartCounter() {
   const cartCounter = document.getElementById('cart-counter');
-  let updateCounter = Number(cartCounter.innerText) + 1;
+  let updateCounter = cartItem.length;
   cartCounter.innerText = updateCounter;
-}
+};
 
 // Quantity
 
@@ -293,7 +313,7 @@ function quantityChanged(event) {
     input.value = 1
   }
   updateCartTotal()
-}
+};
 
 function updateCartTotal() {
   const cartContent = document.getElementsByClassName('cart-content')[0];
@@ -308,44 +328,4 @@ function updateCartTotal() {
   }
   total = total.toFixed(2);
   document.getElementsByClassName('total-price')[0].innerText = '£' + total;
-}
-
-// Pagination
-
-let page1 = data.slice(0, 12);
-
-let pages = "";
-page1.forEach((movies) =>{
-    pages += 
-    `<div class="cards" id="cards">
-        <h2 class="title">${movies.title}</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre}</p>
-        <p>Year: ${movies.year}</p>
-        <p class="price">${movies.price}</p>
-        <button class="btn" id="btn" type="submit">Add to Basket</button>
-    </div>`
-});
-
-function firstPage() {
-  document.getElementById('movie-grid').innerHTML = pages;
-};
-
-let page2 = data.slice(12, 24);
-
-let nextPage = "";
-page2.forEach((movies) =>{
-    nextPage += 
-    `<div class="cards" id="cards">
-        <h2 class="title">${movies.title}</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/768px-DVD_logo.svg.png?20220618105447" alt="dvd" class="poster">
-        <p class="genre">${movies.genre}</p>
-        <p>Year: ${movies.year}</p>
-        <p class="price">${movies.price}</p>
-        <button class="btn" id="btn" type="submit">Add to Basket</button>
-    </div>`
-});
-
-function secondPage() {
-  document.getElementById('movie-grid').innerHTML = nextPage;
 };

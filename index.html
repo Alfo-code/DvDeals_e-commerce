@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DvD | Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <title>DVDeals | Store</title>
     <link rel="stylesheet" href="DvD-style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
@@ -13,40 +13,44 @@
     <header>
         <nav class="nav">
             <ul>
-                <li class="store-name">Dvd Store</li>
+                <li class="store-name">DVDeals</li>
                 <li>
                     <div class="search-wrapper">
-                        <input type="search" placeholder="Search our catalogue" id="search" onkeyup="searchDvd()">
-                        <button>
-                            <span class="material-symbols-outlined">
+                        <input type="search" placeholder="Search our catalogue" id="search" onkeyup="searchDvd()" />
+                        <span class="material-symbols-outlined">
                             search
-                            </span>
-                        </button>
+                        </span>
                     </div>
                 </li>
                 <li>
-                    <button id="cart-icon">
-                        <span class="material-symbols-outlined">
-                        shopping_cart
-                        </span>
+                    <div id="cart-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M10 29C11.1046 29 12 28.1046 12 27C12 25.8954 11.1046 25 10 25C8.89543 25 8 25.8954 8 27C8 28.1046 8.89543 29 10 29Z" fill="white"/>
+                            <path d="M23 29C24.1046 29 25 28.1046 25 27C25 25.8954 24.1046 25 23 25C21.8954 25 21 25.8954 21 27C21 28.1046 21.8954 29 23 29Z" fill="white"/>
+                            <path d="M5.2875 9H27.7125L24.4125 20.55C24.2948 20.9692 24.0426 21.3381 23.6948 21.6001C23.3471 21.862 22.9229 22.0025 22.4875 22H10.5125C10.0771 22.0025 9.65293 21.862 9.30515 21.6001C8.95738 21.3381 8.70524 20.9692 8.5875 20.55L4.0625 4.725C4.0027 4.51594 3.8764 4.33207 3.70271 4.20125C3.52903 4.07042 3.31744 3.99977 3.1 4H1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                         <span id="cart-counter">0</span>
-                    </button>
+                    </div>
                     <!-- Cart Container -->
                     <div class="cart-container" id="cart-container">
-                        <h3 class="cart-title">Your Cart</h3>
-                        <hr class="cart-line">
-                        <!-- Cart Content -->
-                        <div class="cart-content">
-                            <!-- Items -->
-                        </div>
-                        <div class="total">
-                            <div class="total-title">Total</div>
-                            <div class="total-price">£0</div>
-                        </div>
-                        <button type="button" class="btn-buy btn">Buy Now</button>
                         <span class="material-symbols-outlined" id="cart-close">
                             close
                         </span>
+                        <div class="cart-header">
+                            <h4 class="cart-title">Your Basket</h4>
+                        </div>
+                        <!-- Cart Content -->
+                        <div class="cart-content">
+                            <p class="empty-cart">Your basket is empty!</p>
+                            <!-- Items -->
+                        </div>
+                        <div class="checkout">
+                            <div class="total">
+                                <div class="total-title">Total:</div>
+                                <div class="total-price">£ 0.00</div>
+                            </div>
+                            <button type="button" class="btn-buy btn">Buy Now</button>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -56,54 +60,58 @@
     <main>
         <aside class="sidebar-wrapper">
             <div class="sort-wrapper">
-                <label for="sort-by">Sort by</label>
+                <label class="sort-label" for="sort-by">Sort by: </label>
                 <select name="dropdown" id="dropdown" onchange="sorting(this.value)">
-                    <option value="all">See All</option>
+                    <option value="all">Most Popular</option>
                     <option value="oldRel">Old Release</option>
                     <option value="newRel">New Release</option>
                     <option value="priceDown">Price Down</option>
                     <option value="priceUp">Price Up</option>
                 </select>
             </div>
+            <hr class="sidebar-divider"/>
             <div class="sidebar-filter">
-                <h3>Genre</h3>
-                <hr>
+                <h3>Genre (Filter)</h3>
                 <form id="filter-form">
                     <div class="filter-list-wrapper">
                         <ul class="filter-list">
                             <li>
-                                <label for="">
-                                    <input type="checkbox" name="action" id="action"> Action
+                                <label for="action">
+                                    <input type="checkbox" name="action" id="action" class="filter-input"> Action
                                 </label>
                             </li>
                             <li>
-                                <label for="">
-                                    <input type="checkbox" name="comedy" id="comedy"> Comedy
+                                <label for="comedy">
+                                    <input type="checkbox" name="comedy" id="comedy" class="filter-input"> Comedy
                                 </label>
                             </li>
                             <li>
-                                <label for="">
-                                    <input type="checkbox" name="drama" id="drama"> Drama
+                                <label for="drama">
+                                    <input type="checkbox" name="drama" id="drama" class="filter-input"> Drama
                                 </label>
                             </li>
                             <li>
-                                <label for="">
-                                    <input type="checkbox" name="horror" id="horror"> Horror
+                                <label for="horror">
+                                    <input type="checkbox" name="horror" id="horror" class="filter-input"> Horror
                                 </label>
                             </li>
                             <li>
-                                <label for="">
-                                    <input type="checkbox" name="mystery" id="mystery"> Mystery
+                                <label for="mystery">
+                                    <input type="checkbox" name="mystery" id="mystery" class="filter-input"> Mystery
                                 </label>
                             </li>
                             <li>
-                                <label for="">
-                                    <input type="checkbox" name="sci-fi" id="sci-fi"> Sci-Fi
+                                <label for="sci-fi">
+                                    <input type="checkbox" name="sci-fi" id="sci-fi" class="filter-input"> Sci-Fi
                                 </label>
                             </li>
                         </ul>
                         <div>
-                            <button id="clear-btn" onclick="clear()">Clear</button>
+                            <button id="clear-btn" onclick="clear()">
+                                <span class="material-symbols-outlined">
+                                    refresh
+                                </span>
+                            Clear</button>
                         </div>
                     </div>
                 </form>
@@ -114,18 +122,9 @@
             <!-- Cards -->
         </div>
     </main>
-    <div class="pagination">
-        <button class="pagination-button">&lt;
-            <a href="#" onclick="firstPage()">1</a>
-        </button>
-        <button class="pagination-button">&gt;
-            <a href="#" onclick="secondPage()">2</a>
-        </button>
-    </div>
     <!-- Footer -->
     <footer>
-        <p>Privacy Policy</p>
-        <span> &copy; 2022</span>
+        <span> &copy; Alfo-code 2022</span>
     </footer>
  <script src="data.js"></script>
  <script src="index.js"></script> 
