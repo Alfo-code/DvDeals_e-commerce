@@ -280,7 +280,7 @@ input.filter-input {
 .cart-item > span {
     color: var(--dark-gray);
     position: absolute;
-    left: 18.3rem;
+    right: 1.2rem;
 }
 
 .cart-poster {
@@ -349,7 +349,7 @@ input.filter-input {
 #cart-close {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 0.8rem;
     padding: 1rem;
     cursor: pointer;
 }

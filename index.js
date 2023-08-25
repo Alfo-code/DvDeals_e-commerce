@@ -1,3 +1,31 @@
+// Loading
+
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready)
+} else {
+  ready()
+};
+
+function ready() {
+  const removeItem = document.getElementsByClassName('product-remove');
+  for (let i = 0; i < removeItem.length; i++) {
+    const bin = removeItem[i];
+    bin.addEventListener("click", removeCartItem)
+  } 
+
+  let quantityInput = document.getElementsByClassName('product-quantity');
+  for (let i = 0; i < quantityInput.length; i++) {
+    const input = quantityInput[i];
+    input.addEventListener('change', quantityChanged)
+  }
+
+  const addBtn = document.getElementsByClassName('btn');
+  for (let i = 0; i < addBtn.length; i++) {
+    const button = addBtn[i]
+    button.addEventListener('click', addToCart)
+  }
+};
+
 // Cards
 
 let dvd = "";
@@ -18,7 +46,7 @@ document.getElementById('movie-grid').innerHTML = dvd;
 
 let oldest = data.slice(0);
 
-oldest.sort(function(a,b) {
+oldest.sort((a,b) => {
     return a.year - b.year;
 });
 
@@ -39,7 +67,7 @@ oldest.forEach((movies) =>{
 
 let newest = data.slice(0);
 
-newest.sort(function(a,b) {
+newest.sort((a,b) => {
     return b.year - a.year;
 });
 
@@ -60,7 +88,7 @@ newest.forEach((movies) =>{
 
 let cheapFirst = data.slice(0);
 
-cheapFirst.sort(function(a,b) {
+cheapFirst.sort((a,b) => {
   a = (a.price.replace(/\£|,/g, ""));
   b = (b.price.replace(/\£|,/g, ""));
     return a - b;
@@ -83,7 +111,7 @@ cheapFirst.forEach((movies) =>{
 
 let expFirst = data.slice(0);
 
-expFirst.sort(function(a,b) {
+expFirst.sort((a,b) => {
   a = (a.price.replace(/\£|,/g, ""));
   b = (b.price.replace(/\£|,/g, ""));
     return b - a;
@@ -124,7 +152,7 @@ function sorting(value) {
 
 // Search
 
-function searchDvd(){
+function searchDvd() {
   const input = document.getElementById('search').value.toUpperCase();
   const cardContainer = document.getElementById('movie-grid');
 
@@ -150,12 +178,10 @@ const movie = cardContainer.getElementsByClassName('cards');
 for (let i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener("click", (e) => {
     const filter = e.target.id;
-    console.log(filter)
-
-    for(let i = 0; i < movie.length; i++){
+    for (let i = 0; i < movie.length; i++) {
       let genre = movie[i].querySelector('.genre');
     
-      if(genre.innerText.toLowerCase().includes(filter)) {
+      if (genre.innerText.toLowerCase().includes(filter)) {
           movie[i].style.display = "";
           } else {
           movie[i].style.display = "none";
@@ -171,33 +197,6 @@ for (let i = 0; i < btnClear.length; ++i) {
   btnClear[i].checked = false; 
 };
 
-// Loading
-
-if (document.readyState == 'loading') {
-  document.addEventListener('DOMContentLoaded', ready)
-} else {
-  ready()
-};
-
-function ready() {
-  const removeItem = document.getElementsByClassName('product-remove');
-  for (let i = 0; i < removeItem.length; i++) {
-    const bin = removeItem[i];
-    bin.addEventListener("click", removeCartItem)
-  } 
-
-  let quantityInput = document.getElementsByClassName('product-quantity');
-  for (let i = 0; i < quantityInput.length; i++) {
-    const input = quantityInput[i];
-    input.addEventListener('change', quantityChanged)
-  }
-
-  const addBtn = document.getElementsByClassName('btn');
-  for (let i = 0; i < addBtn.length; i++) {
-    const button = addBtn[i]
-    button.addEventListener('click', addToCart)
-  }
-};
 
 // Check if cart is empty
 
