@@ -1,11 +1,16 @@
-/* Style */
+/* General style */
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;700&display=swap');
 
 :root {
     --main-white: #fefefe;
     --main-black: #232325;
-    --btn-main: #0075FF;
+    --main-blue: #0075FF;
+    --light-gray: #E4E7E9;
+    --dark-gray: #5F6C72;
+    --light-blue: #2DA5F3;
+    --dark-blue: #102FD3;
     --btn-hover: #0051B0;
+    --btn-disabled: #B7B7B7;
 }
 
 * {
@@ -18,17 +23,17 @@ body {
     background: var(--main-white);
 }
 
-.store-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding-left: 0.8rem;
-}
-
 /* navigation */
 
 header {
     position: fixed;
     width: 100%;
+}
+
+.store-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-left: 0.8rem;
 }
 
 .nav {
@@ -51,7 +56,7 @@ nav > ul {
     width: 36rem;
     margin: 0.5rem 3.5rem 0 0;
     position: relative;
-    color: #232325;
+    color: var(--main-black);
 }
 
 .search-wrapper span {
@@ -73,13 +78,13 @@ input[type='search']::placeholder {
 .cards {
     width: 17rem;
     height: 30rem;
-    border: 1px solid #E4E7E9;
+    border: 1px solid var(--light-gray);
     background-color: #fff;
     padding: 1rem;
 }
 
 .cards:hover {
-    border: 2px solid #0075FF;
+    border: 2px solid var(--main-blue);
 }
 
 .poster {
@@ -96,7 +101,7 @@ input[type='search']::placeholder {
 }
 
 .card-details {
-    color: #5F6C72;
+    color: var(--dark-gray);
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.25rem;
@@ -105,12 +110,12 @@ input[type='search']::placeholder {
 
 .price {
     font-weight: bold;
-    color: #102FD3;
+    color: var(--dark-blue);
     padding: 0.75rem 0.5rem;
 }
 
 .btn {
-    background-color: var(--btn-main);
+    background-color: var(--main-blue);
     color: var(--main-white);
     font-weight: 700;
     width: 14rem;
@@ -158,7 +163,7 @@ main {
 select {
     width: 11.5rem;
     padding: 0.75rem 0.87rem 0.75rem 1rem;
-    border: 1px solid #E4E7E9;
+    border: 1px solid var(--light-gray);
     margin-left: 1.2rem;
 }
 
@@ -177,7 +182,7 @@ select {
 hr {
     width: 17rem;
     margin: 1rem;
-    border: 1px solid #E4E7E9;
+    border: 1px solid var(--light-gray);
 }
 
 .filter-list {
@@ -207,7 +212,7 @@ input.filter-input {
     font-weight: bold;
     font-size: 1rem;
     background-color: var(--main-white);
-    color: var(--btn-main);
+    color: var(--main-blue);
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -258,7 +263,7 @@ input.filter-input {
 
 .cart-header {
     height: 3rem;
-    border-bottom: 1px solid #E4E7E9;
+    border-bottom: 1px solid var(--light-gray);
 }
 
 .cart-title {
@@ -273,7 +278,7 @@ input.filter-input {
 }
 
 .cart-item > span {
-    color: #5F6C72;
+    color: var(--dark-gray);
     position: absolute;
     left: 18.3rem;
 }
@@ -289,7 +294,7 @@ input.filter-input {
 }
 
 .cart-product-price {
-    color: #2DA5F3;
+    color: var(--light-blue);
     padding-top: 0.5rem;
 }
 .product-quantity {
@@ -297,12 +302,12 @@ input.filter-input {
    top: 2rem;
    left: 8.2rem; 
    text-align: center;
-   border: 2px solid #E4E7E9;
+   border: 2px solid var(--light-gray);
    border-radius: 3px;
 }
 
 .product-quantity:focus {
-    outline-color: #0051B0;
+    outline-color: var(--btn-hover);
 }
 
 .total {
@@ -333,12 +338,12 @@ input.filter-input {
 }
 
 .btn-buy:disabled {
-    background-color: #B7B7B7;
+    background-color: var(--btn-disabled);
 }
 
 .checkout {
     width: 100%;
-    border-top: 1px solid #E4E7E9;
+    border-top: 1px solid var(--light-gray);
 }
 
 #cart-close {
