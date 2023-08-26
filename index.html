@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
-    <title>DVDeals | Store</title>
-    <link rel="stylesheet" href="DvD-style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-</head>
-<body>
-    <header>
-        <nav class="nav">
-            <ul>
-                <li class="store-name">DVDeals</li>
-                <li>
-                    <div class="search-wrapper">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+        <title>DVDeals | Store</title>
+        <link rel="stylesheet" href="DvD-style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    </head>
+    <body>
+        <header>
+            <nav class="nav">
+                <ul>
+                    <li class="store-name">DVDeals</li>
+                    <li>
+                        <div class="search-wrapper">
                         <input type="search" placeholder="Search our catalogue" id="search" onkeyup="searchDvd()" />
                         <span class="material-symbols-outlined">
                             search
@@ -55,9 +55,8 @@
                 </li>
             </ul>
         </nav>
-        
     </header>
-    <main>
+    <main id="main">
         <aside class="sidebar-wrapper">
             <div class="sort-wrapper">
                 <label class="sort-label" for="sort-by">Sort by: </label>
@@ -115,9 +114,11 @@
                         </div>
                     </div>
                 </form>
-             
             </div>
         </aside>
+        <div id="no-results">
+            <p>No results found</p>
+        </div>
         <div id="movie-grid">
             <!-- Cards -->
         </div>

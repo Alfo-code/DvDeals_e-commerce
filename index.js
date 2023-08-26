@@ -155,17 +155,23 @@ function sorting(value) {
 function searchDvd() {
   const input = document.getElementById('search').value.toUpperCase();
   const cardContainer = document.getElementById('movie-grid');
-
   const movie = cardContainer.getElementsByClassName('cards');
+  let resultFound;
 
   for(let i = 0; i < movie.length; i++) {
     let title = movie[i].querySelector('.dvd-title');
 
     if(title.innerText.toUpperCase().indexOf(input) > -1) {
+      resultFound = true;
       movie[i].style.display = "";
     } else {
       movie[i].style.display = "none";
     }
+  }
+  if (resultFound) {
+    document.getElementById("no-results").style.display = "";
+  } else {
+    document.getElementById("no-results").style.display = "block";
   }
 };
 
