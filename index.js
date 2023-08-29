@@ -7,10 +7,13 @@ if (document.readyState == 'loading') {
 };
 
 function ready() {
+  const sortDropdown = document.getElementById('dropdown');
+  sortDropdown.addEventListener('change', sorting)
+
   const removeItem = document.getElementsByClassName('product-remove');
   for (let i = 0; i < removeItem.length; i++) {
     const bin = removeItem[i];
-    bin.addEventListener("click", removeCartItem)
+    bin.addEventListener('click', removeCartItem)
   } 
 
   let quantityInput = document.getElementsByClassName('product-quantity');
@@ -133,6 +136,7 @@ expFirst.forEach((movies) =>{
 // Sorting function
 
 function sorting(value) {
+  value = this.value
   if (value === "oldRel") {
     document.getElementById('movie-grid').innerHTML = sorted;
   }
@@ -147,6 +151,11 @@ function sorting(value) {
   } 
   else{value === "all" 
     document.getElementById('movie-grid').innerHTML = dvd;
+  }
+  const addBtn = document.getElementsByClassName('btn');
+  for (let i = 0; i < addBtn.length; i++) {
+    const button = addBtn[i]
+    button.addEventListener('click', addToCart)
   }
 };
 
@@ -269,6 +278,7 @@ function addToCart(event) {
   addItemToCart(title, price, imageSrc);
   updateCartTotal()
   checkCart()
+  cartCounter()
 };
 
 function addItemToCart(title, price, imageSrc) {
