@@ -1,6 +1,7 @@
- # DvD store
+ # DvDeals e-commerce
 
-This is my final project for [Skills Bootcamp - Bath Spa University](https://www.bathspa.ac.uk/news-and-events/news/skills-bootcamps/).<br/>
+This is my final project for the [Web Development Skills Bootcamp - Bath Spa University](https://www.bathspa.ac.uk/news-and-events/news/skills-bootcamps/).<br/>
+A simple e-commerce website selling DVDs.
 Here are some of the things I learned from this project:
  - How to plan and execute a web development project
  - How to work with a variety of technologies, including HTML, CSS, JavaScript
@@ -20,7 +21,7 @@ Here are some of the things I learned from this project:
   
 ## Live URL
 
-- Check this project [online](https://alfo-code.github.io/dvd-store/)
+- Check this project [online](https://alfo-code.github.io/DvDeals_e-commerce/)
 
 
  
