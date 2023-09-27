@@ -18,6 +18,11 @@ Here are some of the things I learned from this project:
 - CSS Grid
 - Responsive design
 - Javascript ES6
+
+## Future improvements
+  
+- [ ] Add an 'About page'
+- [ ] Add LocalStorage for the basket
   
 ## Live URL
 
